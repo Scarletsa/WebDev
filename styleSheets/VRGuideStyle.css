@@ -1,0 +1,189 @@
+
+html, body, header, footer, hgroup, nav, article, section, figure,
+figcaption, h1, h2, h3, ul, li, body, div, p, img
+{
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0;
+}
+header
+{
+  background-color: black;
+  height: 50px;
+  width: 100%;
+  padding-left: 0px;
+}
+#home
+{
+  background-image: url("../images/Background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+	overflow-x: hidden; /* For Opera */
+	-webkit-box-shadow:
+		inset #19d4ff 0 0 0 5px,
+		inset #18cdf7 0 0 0 1px,
+		inset #53dfff 0 0 0 10px,
+		inset #50d8f7 0 0 0 11px,
+		inset #8ce9ff 0 0 0 16px,
+		inset #88e2f7 0 0 0 17px,
+		inset #c5f4ff 0 0 0 22px,
+		inset #bfecf7 0 0 0 23px;
+	-moz-box-shadow:
+		inset #19d4ff 0 0 0 5px,
+		inset #18cdf7 0 0 0 1px,
+		inset #53dfff 0 0 0 10px,
+		inset #50d8f7 0 0 0 11px,
+		inset #8ce9ff 0 0 0 16px,
+		inset #88e2f7 0 0 0 17px,
+		inset #c5f4ff 0 0 0 22px,
+		inset #bfecf7 0 0 0 23px;
+	box-shadow:
+		inset #19d4ff 0 0 0 5px,
+		inset #18cdf7 0 0 0 1px,
+		inset #53dfff 0 0 0 10px,
+		inset #50d8f7 0 0 0 11px,
+		inset #8ce9ff 0 0 0 16px,
+		inset #88e2f7 0 0 0 17px,
+		inset #c5f4ff 0 0 0 22px,
+		inset #bfecf7 0 0 0 23px;
+}
+#HomeLink
+{
+  padding-top: 8px;
+  text-decoration: none;
+  list-style-type: none;
+  float: left;
+  padding-left: 100px;
+  color: blue;
+  font-size: 30px;
+}
+h2{font-size: 35px;}
+#Righttoplist
+{
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  background-color: black;
+  font-weight: bold;
+}
+#Lefttoplist
+{
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  background-color: black;
+  font-weight: bold;
+}
+.list1{display: inline;}
+.list2{display: inline;}
+.list3{display: inline;}
+a:hover {position: relative;}
+.list1 a
+{
+  display: inline;
+  color: lightgray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.list2 a
+{
+  display: inline;
+  color: lightgray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.list3 a
+{
+  padding-top: 15px;
+  display: inline;
+  color: lightgray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#Oculus:hover:after
+ {
+    content: url("../images/oculus_rift.png");
+    display: block;
+    position: absolute;
+    left: 250px;
+    top: 225px;
+}
+#HTC:hover:after
+ {
+    content: url("../images/HTC_vive.png");
+    display: block;
+    position: absolute;
+    left: 350px;
+    top: 225px;
+}
+#Samsung:hover:after
+ {
+    content: url("../images/Samsung_gear.png");
+    display: block;
+    position: absolute;
+    left: 210px;
+    top: 225px;
+}
+#leftNav
+{
+  display: inline-block;
+  width: 400px;
+  float: left;
+}
+#rightNav
+{
+  display: inline-block;
+  width: 500px;
+  float: right;
+  margin-right: 0;
+  padding-right: 0;
+}
+#break{overflow: hidden; clear: both;}
+#rightParagraph
+{
+  overflow: hidden;
+  position: relative;
+  margin-right: 25px;
+  width: 400px;
+  float: right;
+  height: 525px;
+}
+footer
+{
+    display: block;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 0.95em;
+    font-style: italic;
+    bottom:0;
+    width: 100%;
+    height: 40px;
+
+    background-color: black;
+    overflow: auto;
+}
+#footerNav
+{
+  display: inline-block;
+  float: left;
+  width: 500px;
+}
+#footerList
+{
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  background-color: black;
+  font-weight: bold;
+}
