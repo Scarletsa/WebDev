@@ -1,22 +1,27 @@
+var quantity = 0;
+var gear = [];
 function start() {
-  var button1 = document.getElementById("wishlist");
-  button1.addEventListener("click", wish, false);
-  var button2 = document.getElementById("shoppingcart");
-  button2.addEventListener("click", cart, false);
+  var button = document.getElementById("wishlistSamsung");
+  button.addEventListener("click", wish, false);
+  var buttons = document.getElementById("shoppingCartSamsung");
+  buttons.addEventListener("click", cart, false);
 }
 
 function wish() {
-  var price = 99;
-  var quantity = 1;
-  samsung.push(price, quantity);
-  alert("Samsung gear added to wish list");
+  var price = 799;
+  var description = "Samsung Gear VR";
+  quantity ++;
+  var total = (price * quantity);
+  var item = (description + "|" + price + "|" + quantity + "|" + total);
+  oculus.push(item);
+  window.localStorage.setItem("wishListArray", oculus.join(";"));
+  alert("Samsung Gear added to wish list");
+
 }
 
 function cart() {
-  var price = 99;
+  var price = 799;
   var quantity = /* retrieve integer from cart page */
-  alert("Samsung gear added to cart");
+  alert("Samsung Gear added to cart");
 }
-
 window.addEventListener("load", start, false);
-var samsung = [];

@@ -11,8 +11,8 @@ function display(){
     var item = iList[i].split("|");
     temp = "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
   }
-  table += "</table>";
-  display.innerHTML = temp;
+  temp += "</table>";
+  toScreen.innerHTML = temp;
 }
 
 window.addEventListener("load" ,display , false)
