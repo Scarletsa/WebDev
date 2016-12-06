@@ -1,8 +1,10 @@
 var quantity = 0;
 var oculus = [];
 function start() {
+  //$("#wishlist").click(wish())
   var button1 = document.getElementById("wishlist");
   button1.addEventListener("click", wish, false);
+  //$("#shoppingcart").click(cart())
   var button2 = document.getElementById("shoppingcart");
   button2.addEventListener("click", cart, false);
 }
@@ -14,7 +16,7 @@ function wish() {
   var total = (price * quantity);
   var item = (description + "|" + price + "|" + quantity + "|" + total);
   oculus.push(item);
-  window.localStorage.setItem("wishListArray", oculus.join(";"));
+  window.localStorage.setItem("wishListArray", (oculus.join(";")));
   alert("Oculus Rift added to wish list");
 
 }
@@ -25,3 +27,4 @@ function cart() {
   alert("Oculus Rift added to cart");
 }
 window.addEventListener("load", start, false);
+//$(document).ready(start());
