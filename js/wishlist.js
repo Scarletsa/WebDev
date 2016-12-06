@@ -1,10 +1,6 @@
-function start(){
-  var button = document.getElementById("displayIt");
-  button.addEventListener("click" ,display , false);
-}
 
 function display(){
-  var itemString = window.localStorage.getItem("wishlistArray");
+  var itemString = window.localStorage.getItem("wishListArray");
   var iList = itemString.split(";")
   var toScreen = document.getElementById("wishlistDisplay");
   toScreen.innerHTML = iList;
@@ -19,4 +15,4 @@ function display(){
   display.innerHTML = temp;
 }
 
-window.addEventListener("load" , start , false)
+window.addEventListener("load" ,display , false)

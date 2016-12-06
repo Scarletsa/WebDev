@@ -1,10 +1,10 @@
 var quantity = 0;
 var oculus = [];
 function start() {
-  var button1 = document.getElementById("wishlist");
-  button1.addEventListener("click", wish, false);
-  var button2 = document.getElementById("shoppingcart");
-  button2.addEventListener("click", cart, false);
+  var button = document.getElementById("wishlist");
+  button.addEventListener("click", wish, false);
+  var buttons = document.getElementById("shoppingcart");
+  buttons.addEventListener("click", cart, false);
 }
 
 function wish() {
@@ -12,8 +12,7 @@ function wish() {
   var description = "Oculus Rift VR";
   quantity += 1;
   var total = (price * quantity);
-  var item = description + "|" + price + "|" + quantity + "|" + total;
-  oculus.push(item);
+  oculus.push(description + "|" + price + "|" + quantity + "|" + total;);
   window.localStorage.setItem("wishListArray", oculus.join(";"));
   alert("Oculus Rift added to wish list");
 }
