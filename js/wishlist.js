@@ -1,14 +1,15 @@
 function start(){
   var button = document.getElementById("displayIt");
-  button.addEventListener("click" , table , false);
-  var itemString = window.localStorage.getItem("wishlistArray");
-  var iList = itemString.split(" ");
-  var display = document.getElementById("wishlistDisplay");
-  display.innerHTML = iList;
+  button.addEventListener("click" ,display , false);
 }
 
-function table(){
-  var table = "<table>";
+function display(){
+  var itemString = window.localStorage.getItem("wishlistArray");
+  var iList = itemString.split(";")
+  var toScreen = document.getElementById("wishlistDisplay");
+  toScreen.innerHTML = iList;
+
+  var temp = "<table><tr><td>Descriptionn</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
   for(var i in iList)
   {
     var item = iList[i].split("|");
@@ -18,4 +19,4 @@ function table(){
   display.innerHTML = temp;
 }
 
-  window.addEventListener("load" , start , false)
+window.addEventListener("load" , start , false)
