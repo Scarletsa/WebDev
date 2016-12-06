@@ -13,8 +13,8 @@ function wish() {
   quantity ++;
   var total = (price * quantity);
   var item = (description + "|" + price + "|" + quantity + "|" + total);
-  oculus.push(item);
-  window.localStorage.setItem("wishListArray", oculus.join(";"));
+  htc.push(item);
+  window.localStorage.setItem("wishListVive", htc.join(";"));
   alert("HTC Vive added to wish list");
 
 }

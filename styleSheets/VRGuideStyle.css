@@ -187,3 +187,10 @@ footer
   background-color: black;
   font-weight: bold;
 }
+#relativeDiv{position: relative;}
+#accountInfo
+{
+position: fixed;
+top: 40%;
+left: 40%;
+}
