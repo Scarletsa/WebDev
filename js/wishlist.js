@@ -9,7 +9,7 @@ function display(){
   var toScreen = document.getElementById("wishlistDisplay");
   toScreen.innerHTML = iList;
 
-  var temp = "<table><tr><td>Descriptionn</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
+  var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
   for(var i in iList)
   {
     var item = iList[i].split("|");
