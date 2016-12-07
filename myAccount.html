@@ -2,16 +2,52 @@
 <html lang ="en">
 <head>
   <meta charset = "utf-8"/>
-<title>My Account</title>
-<link rel ="stylesheet" href ="styleSheets/VRGuideStyle.css"/>
+<title>Login</title>
+<link rel ="stylesheet" href ="styleSheets/signup.css"/>
 </head>
-    <div id="relativeDiv">
-      <div id = "accountInfo">
-        <table>
-          <tr><td>Username:</td><td><input type="text" placeholder="User name" id="userName" name="username" required></td></tr>
-          <tr><td>Password:</td><td><input type="password" placeholder="Password" id="password" name="password" required></td></tr>
-        </table>
-        <button>Submit</button>
-        <p>New Users <a href="signup.html">Sign-Up</a></p>
-      </div>
-    </div>
+<body>
+  <header>
+    <nav id = "leftNav">
+    <ul id = "Lefttoplist">
+      <li class = "list2"><a id = "HTC" href="HTCVive.html">HTC Vive</a></li>
+      <li class = "list2"><a id = "Oculus" href="oculusRift.html">Oculus Rift</a></li>
+      <li class = "list2"><a id = "Samsung" href="samsungGear.html">Samsung VR</a></li>
+    </ul>
+    </nav>
+    <a id = "HomeLink" href = "VRGuide.html">VRGuide</a>
+    <nav id = "rightNav">
+    <ul id = "Righttoplist">
+      <li class = "list1"><a href="checkout.html">Checkout</a></li>
+      <li class = "list1"><a href="shoppingCart.html">Shopping Cart</a></li>
+      <li class = "list1"><a href="wishlist.html">Wish List</a></li>
+      <li class = "list1"><a href="myAccount.html">My Account</a></li>
+    </ul>
+    </nav>
+
+</header>
+
+<div>
+<div id="main">
+  <h1>Registration Form<h1>
+  <form action ="#">
+    <table id = 'register'>
+      <tr><td>Username:</td><td><input type="text" placeholder="User name" id="userName" name="username" required></td></tr>
+      <tr><td>Password:</td><td><input type="password" placeholder="Password" id="password" name="password" required></td></tr>
+    </table>
+    <p><input type="button" id="login" value="Login">
+    <input type="button" id="clear" value="Clear"></p>
+  </form>
+</div>
+</div>
+
+</body>
+<footer>
+  <nav id = "footerNav">
+  <ul id = "footerlist">
+    <li class = "list3"><a href="#">Business</a></li>
+    <li class = "list3"><a href="#">Privacy</a></li>
+    <li class = "list3"><a href="#">Legal</a></li>
+    <li class = "list3"><a href="pageTwo.html">About</a></li>
+  </ul>
+  </nav>
+</footer>

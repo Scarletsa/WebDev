@@ -1,6 +1,6 @@
 
-function displayRift(){
-  var itemString = window.localStorage.getItem("wishListArray");
+function display(){
+  var itemString = window.localStorage.getItem("oculusWish");
   var iList = itemString.split(";")
   var toScreen = document.getElementById("wishlistDisplay");
   toScreen.innerHTML = iList;
@@ -9,13 +9,32 @@ function displayRift(){
   for(var i in iList)
   {
     var item = iList[i].split("|");
-    temp = "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
+    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
   }
+
+  var itemString = window.localStorage.getItem("gearWish");
+  var iList = itemString.split(";")
+
+  for(var i in iList)
+  {
+    var item = iList[i].split("|");
+    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
+  }
+
+  var itemString = window.localStorage.getItem("viveWish");
+  var iList = itemString.split(";")
+
+  for(var i in iList)
+  {
+    var item = iList[i].split("|");
+    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
+  }
+
   temp += "</table>";
   toScreen.innerHTML = temp;
 }
 
-function displayGear(){
+/*function displayGear(){
   var itemString = window.localStorage.getItem("wishListGear");
   var iList = itemString.split(";")
   var toScreen = document.getElementById("wishlistDisplay2");
@@ -45,9 +64,9 @@ function displayVive(){
   }
   temp += "</table>";
   toScreen.innerHTML = temp;
-}
+}*/
 
 
-window.addEventListener("load" ,displayRift , false)
-window.addEventListener("load" ,displayGear , false)
-window.addEventListener("load" ,displayVive , false)
+window.addEventListener("load" ,display , false)
+//window.addEventListener("load" ,displayGear , false)
+//window.addEventListener("load" ,displayVive , false)

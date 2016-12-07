@@ -3,7 +3,7 @@
 <head>
   <meta charset = "utf-8"/>
 <title>Login</title>
-<link rel ="stylesheet" href ="../stylesheets/signup.css"/>
+<link rel ="stylesheet" href ="styleSheets/signup.css"/>
 </head>
 <body>
   <header>
@@ -29,13 +29,10 @@
 <div>
 <div id="main">
   <h1>Registration Form<h1>
-  <form id="registration" action ="#">
-    <table id='register'>
-    <tr>
-      <td><label>Email: </label></td><td><input    type="email" placeholder="name@domain.com" id="email" name="email" required>
-    </tr><tr>
-      <td><label>Password: </label></td><td><input type="password" placeholder="something123" id="password" name="password" required>
-    </tr>
+  <form action ="#">
+    <table id = 'register'>
+      <tr><td>Username:</td><td><input type="text" placeholder="User name" id="userName" name="username" required></td></tr>
+      <tr><td>Password:</td><td><input type="password" placeholder="Password" id="password" name="password" required></td></tr>
     </table>
     <p><input type="button" id="login" value="Login">
     <input type="button" id="clear" value="Clear"></p>

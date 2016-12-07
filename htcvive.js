@@ -1,27 +1,26 @@
-var quantity = 0;
-var htc = [];
-function start() {
-  var button = document.getElementById("wishListHTC");
-  button.addEventListener("click", wish, false);
-  var buttons = document.getElementById("shoppingCartHTC");
-  buttons.addEventListener("click", cart, false);
-}
+var wish = [];
+var cart = [];
 
-function wish() {
-  var price = 799;
-  var description = "HTC Vive";
-  quantity ++;
-  var total = (price * quantity);
-  var item = (description + "|" + price + "|" + quantity + "|" + total);
-  htc.push(item);
-  window.localStorage.setItem("wishListVive", htc.join(";"));
-  alert("HTC Vive added to wish list");
+$(document).ready(function(){
+      $("#wishListHTC").click(function() {
+        var price = 799;
+        var description = "HTC Vive VR";
+        var quantity = parseInt(window.prompt("Please enter a quantity: "));
+        var total = (price * quantity);
+        var item = (description + "|" + price + "|" + quantity + "|" + total);
+        wish.push(item);
+        window.localStorage.setItem("viveWish", (wish.join(";")));
+        alert("HTC Vive added to wish list");
+      })
 
-}
-
-function cart() {
-  var price = 799;
-  var quantity = /* retrieve integer from cart page */
-  alert("HTC Vive added to cart");
-}
-window.addEventListener("load", start, false);
+      $("#shoppingCartHTC").click(function() {
+        var price = 799;
+        var description = "HTC Vive VR";
+        var quantity = parseInt(window.prompt("Please enter a quantity: "));
+        var total = (price * quantity);
+        var item = (description + "|" + price + "|" + quantity + "|" + total);
+        cart.push(item);
+        window.localStorage.setItem("viveCart", (wish.join(";")));
+        alert("HTC Vive added to cart");
+      });
+});

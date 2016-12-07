@@ -1,26 +1,26 @@
-var quantity = 0;
-var gear = [];
-function start() {
-  var button = document.getElementById("wishListSamsung");
-  button.addEventListener("click", wish, false);
-  var buttons = document.getElementById("shoppingCartSamsung");
-  buttons.addEventListener("click", cart, false);
-}
+var wish = [];
+var cart = [];
 
-function wish() {
-  var price = 799;
-  var description = "SamsungGear VR";
-  quantity ++;
-  var total = (price * quantity);
-  var item = (description + "|" + price + "|" + quantity + "|" + total);
-  gear.push(item);
-  window.localStorage.setItem("wishListGear", gear.join(";"));
-  alert("Samsung Gear VR added to wish list");
-}
+$(document).ready(function(){
+      $("#wishListSamsung").click(function() {
+        var price = 99;
+        var description = "Samsung Gear VR";
+        var quantity = parseInt(window.prompt("Please enter a quantity: "));
+        var total = (price * quantity);
+        var item = (description + "|" + price + "|" + quantity + "|" + total);
+        wish.push(item);
+        window.localStorage.setItem("gearWish", (wish.join(";")));
+        alert("Samsung Gear added to wish list");
+      })
 
-function cart() {
-  var price = 799;
-  var quantity = /* retrieve integer from cart page */
-  alert("Samsung Gear VR added to cart");
-}
-window.addEventListener("load", start, false);
+      $("#shoppingCartSamsung").click(function() {
+        var price = 99;
+        var description = "Samsung Gear VR";
+        var quantity = parseInt(window.prompt("Please enter a quantity: "));
+        var total = (price * quantity);
+        var item = (description + "|" + price + "|" + quantity + "|" + total);
+        cart.push(item);
+        window.localStorage.setItem("gearCart", (wish.join(";")));
+        alert("Samsung Gear added to cart");
+      });
+});
