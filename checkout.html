@@ -4,7 +4,8 @@
   <meta charset = "utf-8"/>
 <title>Sign up</title>
 <link rel ="stylesheet" href ="stylesheets/signup.css"/>
-		<script language = "javascript" type="text/javascript" src = "js/signup.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script language = "javascript" type="text/javascript" src = "js/checkout.js"></script>
 </head>
 <body>
   <header>
@@ -29,6 +30,15 @@
 
 <div>
 <div id="main">
+    <p>This is your cart<p>
+      <hr>
+<div id="cart">
+</div>
+<hr>
+<div>
+  <span>Your total comes to: $</span><span id='total'></span>
+</div>
+  <hr>
   <h1>Billing information<h1>
   <form id="registration" action ="#">
     <table id='register'>
@@ -60,12 +70,11 @@
         <td><label>Credit Card expiration: </label></td><td><input type = "date" name = "expiration" id="passv" required><td>(expiration date)</td>
       </tr>
     </table>
-    <p><input type="button" id="signup" value="Sign up!">
+    <p><input type="button" id="signup" value="Purchase!">
     <input type="button" id="clear" value="Clear"></p>
   </form>
 </div>
 </div>
-
 </body>
 <footer>
   <nav id = "footerNav">

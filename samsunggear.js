@@ -20,7 +20,7 @@ $(document).ready(function(){
         var total = (price * quantity);
         var item = (description + "|" + price + "|" + quantity + "|" + total);
         cart.push(item);
-        window.localStorage.setItem("gearCart", (wish.join(";")));
+        window.localStorage.setItem("gearCart", (cart.join(";")));
         alert("Samsung Gear added to cart");
       });
 });

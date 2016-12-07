@@ -20,7 +20,7 @@ $(document).ready(function(){
         var total = (price * quantity);
         var item = (description + "|" + price + "|" + quantity + "|" + total);
         cart.push(item);
-        window.localStorage.setItem("oculusCart", (wish.join(";")));
+        window.localStorage.setItem("oculusCart", (cart.join(";")));
         alert("Oculus Rift added to cart");
       });
 });

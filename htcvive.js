@@ -20,7 +20,7 @@ $(document).ready(function(){
         var total = (price * quantity);
         var item = (description + "|" + price + "|" + quantity + "|" + total);
         cart.push(item);
-        window.localStorage.setItem("viveCart", (wish.join(";")));
+        window.localStorage.setItem("viveCart", (cart.join(";")));
         alert("HTC Vive added to cart");
       });
 });
