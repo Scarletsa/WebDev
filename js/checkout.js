@@ -177,8 +177,12 @@ $('#signup').click(function(){
     document.getElementById("ccExp").style.backgroundColor = "green";
     document.getElementById("cvv").style.backgroundColor = "green";
   }
+  });
 
-});
+  $('clear').click(function() {
+    document.getElementById("registration").reset();
+  });
+
 }
 
 window.addEventListener("load" ,display , false)
