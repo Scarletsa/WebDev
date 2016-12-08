@@ -179,7 +179,7 @@ $('#signup').click(function(){
   }
   });
 
-  $('clear').click(function() {
+  $('#clear').click(function() {
     document.getElementById("registration").reset();
   });
 
