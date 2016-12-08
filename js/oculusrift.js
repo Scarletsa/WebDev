@@ -6,7 +6,6 @@ $(document).ready(function(){
         var total = (price * quantity);
         var item = (description + "|" + price + "|" + quantity + "|" + total);
         window.localStorage.setItem("oculusWish", item);
-        alert("Oculus Rift added to wish list");
       })
 
       $("#shoppingcart").click(function() {
@@ -16,6 +15,5 @@ $(document).ready(function(){
         var total = (price * quantity);
         var item = (description + "|" + price + "|" + quantity + "|" + total);
         window.localStorage.setItem("oculusCart", item);
-        alert("Oculus Rift added to cart");
       });
 });

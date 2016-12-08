@@ -86,6 +86,7 @@ $('#signup').click(function(){
   var zipLength = zip.toString().trim().length;
   var phoneLength = phone.toString().trim().length;
   var passLength = password.toString().trim().length;
+  var passvLength = passv.toString().trim().length;
   var ccNumberLength = creditCardNumber.toString().trim().length;
   var ccExperiationLength = ccExpiration.toString().trim().length;
   var ccVVLength = ccVerifyValue.toString().trim().length;
@@ -106,7 +107,6 @@ $('#signup').click(function(){
     flag = false;
   }
   if(addressTrim == ""){
-    alert("User must enter atleast a 1 character for address");
     document.getElementById("address").value = "";
     document.getElementById("address").style.backgroundColor = "red";
     flag = false;
@@ -140,6 +140,12 @@ $('#signup').click(function(){
   {
     document.getElementById("password").value = "";
     document.getElementById("password").style.backgroundColor = "red";
+    flag = false;
+  }
+  if(passvLength < 6)
+  {
+    document.getElementById("passv").value = "";
+    document.getElementById("passv").style.backgroundColor = "red";
     flag = false;
   }
   if(password != passv) {
@@ -263,7 +269,7 @@ $('#signup').click(function(){
     var zip = document.getElementById("zip").value;
     var zipLength = zip.toString().trim().length;
 
-    if(zipLength == 5)
+    if(zipLength == 4)
     {
       document.getElementById("zip").style.backgroundColor = "lightgreen";
     }

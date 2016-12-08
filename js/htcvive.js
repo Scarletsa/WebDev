@@ -6,7 +6,6 @@ $(document).ready(function(){
         var total = (price * quantity);
         var item = (description + "|" + price + "|" + quantity + "|" + total);
         window.localStorage.setItem("viveWish", item);
-        alert("HTC Vive added to wish list");
       })
 
       $("#shoppingCartHTC").click(function() {
@@ -16,6 +15,5 @@ $(document).ready(function(){
         var total = (price * quantity);
         var item = (description + "|" + price + "|" + quantity + "|" + total);
         window.localStorage.setItem("viveCart", item);
-        alert("HTC Vive added to cart");
       });
 });
