@@ -63,11 +63,13 @@
       </tr><tr>
         <td><label>Phone: </label></td><td><input type="phone" placeholder="111-111-1111" id="phone" name="phone" required><td>(XXX-XXX-XXXX)</td>
       </tr><tr>
-        <td><label>Credit Card: </label></td><td><select name = "credit card" required><option>Visa</option><option>Mastercard</option><option>American Express</option><td>(Choose one)</td>
+        <td><label>Credit Card: </label></td><td><select name = "credit card" id="ccName" required><option>Visa</option><option>Mastercard</option><option>American Express</option><td>(Choose one)</td>
       </tr><tr>
-        <td><label>Credit Card number: </label></td><td><input name = "cc#" placeholder="1111222233334444" id="password" required><td>(16 characters minimum 0-9)</td>
+        <td><label>Credit Card number: </label></td><td><input name = "cc#" placeholder="1111222233334444" id="ccNumber" required><td>(16 characters minimum 0-9)</td>
       </tr><tr>
-        <td><label>Credit Card expiration: </label></td><td><input type = "date" name = "expiration" id="passv" required><td>(expiration date)</td>
+        <td><label>Credit Card expiration: </label></td><td><input type = "date" name = "expiration" id="ccExp" required><td>(expiration date)</td>
+      </tr><tr>
+        <td><label>CVV: </label></td><td><input type = "text" name = "cvv" id="cvv" required><td>(expiration date)</td>
       </tr>
     </table>
     <p><input type="button" id="signup" value="Purchase!">
