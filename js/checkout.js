@@ -8,6 +8,7 @@ function display(){
   var viveString = window.localStorage.getItem("viveCart");
   var vItem = viveString.split("|");
   var toScreen = document.getElementById("cart");
+  var totalCheck = document.getElementById("total").value;
 
   var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
   temp += "<tr><td>" + oItem[0] + "</td><td>" + oItem[1] + "</td><td><input name='quantityRift' id='quantityRift' type='text' value='" + oItem[2] + "'  style='width:40px'></td><td>" + oItem[3] + "</td></tr>";
@@ -73,6 +74,22 @@ $('#signup').click(function(){
   var creditCardNumber = document.getElementById("ccNumber").value;
   var ccExpiration = document.getElementById("ccExp").value;
   var ccVerifyValue = document.getElementById("cvv").value;
+
+  //Get total cost of cart
+  total = 0;
+
+  var oculusString = window.localStorage.getItem("oculusCart");
+  var oItem = oculusString.split("|");
+  var gearString = window.localStorage.getItem("gearCart");
+  var gItem = gearString.split("|");
+  var viveString = window.localStorage.getItem("viveCart");
+  var vItem = viveString.split("|");
+  var toScreen = document.getElementById("cart");
+  var totalCheck = document.getElementById("total").value;
+
+  total += parseInt(oItem[3]);
+  total += parseInt(gItem[3]);
+  total += parseInt(vItem[3]);
 
   //Trimmed Strings
   var userTrim = user.trim();
@@ -171,7 +188,7 @@ $('#signup').click(function(){
     document.getElementById("cvv").style.backgroundColor = "red";
     flag = false;
   }
-  if(flag == true) {
+  if(flag == true && total > 0) {
     alert("Success! Purchase made. You will recieve a receipt via email.")
     document.getElementById("user").style.backgroundColor = "green";
     document.getElementById("first").style.backgroundColor = "green";
@@ -189,6 +206,11 @@ $('#signup').click(function(){
     document.getElementById("ccExp").style.backgroundColor = "green";
     document.getElementById("cvv").style.backgroundColor = "green";
   }
+  if(flag == true && total == 0)
+  {
+    alert("You must have at least one item in your cart to make a purchase");
+  }
+
   });
 
   $('#clear').click(function() {
@@ -260,7 +282,7 @@ $('#signup').click(function(){
     var state = document.getElementById("state").value;
     var stateLength = state.toString().trim().length;
 
-    if(stateLength >= 2)
+    if(stateLength >= 1)
     {
       document.getElementById("state").style.backgroundColor = "lightgreen";
     }
@@ -305,7 +327,7 @@ $('#signup').click(function(){
     var phone = document.getElementById("phone").value;
     var phoneLength = phone.toString().trim().length;
 
-    if(phoneLength == 10)
+    if(phoneLength == 9)
     {
       document.getElementById("phone").style.backgroundColor = "lightgreen";
     }
@@ -313,9 +335,9 @@ $('#signup').click(function(){
 
   $('#ccNumber').keydown(function(){
     var ccNumber = document.getElementById("ccNumber").value;
-    var ccNumber = ccNumber.toString().trim().length;
+    var ccNumberLength = ccNumber.toString().trim().length;
 
-    if(ccNumberLength >= 2)
+    if(ccNumberLength == 15)
     {
       document.getElementById("ccNumber").style.backgroundColor = "lightgreen";
     }
@@ -324,7 +346,7 @@ $('#signup').click(function(){
     var ccExp = document.getElementById("ccExp").value;
     var ccExpLength = ccExp.toString().trim().length;
 
-    if(ccExpLength >= 8)
+    if(ccExpLength == 3)
     {
       document.getElementById("ccExp").style.backgroundColor = "lightgreen";
     }
