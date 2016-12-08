@@ -1,46 +1,26 @@
-total = 0;
-
 function display(){
-  var itemString = window.localStorage.getItem("oculusCart");
-  var iList = itemString.split(";")
+  total = 0;
+
+  var oculusString = window.localStorage.getItem("oculusCart");
+  var oItem = oculusString.split("|");
+  var gearString = window.localStorage.getItem("gearCart");
+  var gItem = gearString.split("|");
+  var viveString = window.localStorage.getItem("viveCart");
+  var vItem = viveString.split("|");
   var toScreen = document.getElementById("cart");
-  toScreen.innerHTML = iList;
 
   var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
-
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td><input name='quantityRift' id='quantityRift' type='text' value='" + item[2] + "'  style='width:40px'></td><td>" + item[3] + "</td></tr>";
-    total += parseInt(item[3]);
-  }
-
-  var itemString = window.localStorage.getItem("gearCart");
-  var iList = itemString.split(";");
-
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td><input name='quantityGear' id='quantityGear' type='text' value='" + item[2] + "' style='width:40px'></td><td>" + item[3] + "</td></tr>";
-      total += parseInt(item[3]);
-  }
-
-  var itemString = window.localStorage.getItem("viveCart");
-  var iList = itemString.split(";");
-
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td><input name='quantityVive' id='quantityVive' type='text' value='" + item[2] + "'  style='width:40px'></td><td>" + item[3] + "</td></tr>";
-    total += parseInt(item[3]);
-  }
-
+  temp += "<tr><td>" + oItem[0] + "</td><td>" + oItem[1] + "</td><td><input name='quantityRift' id='quantityRift' type='text' value='" + oItem[2] + "'  style='width:40px'></td><td>" + oItem[3] + "</td></tr>";
+  total += parseInt(oItem[3]);
+  temp += "<tr><td>" + gItem[0] + "</td><td>" + gItem[1] + "</td><td><input name='quantityGear' id='quantityGear' type='text' value='" + gItem[2] + "' style='width:40px'></td><td>" + gItem[3] + "</td></tr>";
+  total += parseInt(gItem[3]);
+  temp += "<tr><td>" + vItem[0] + "</td><td>" + vItem[1] + "</td><td><input name='quantityVive' id='quantityVive' type='text' value='" + vItem[2] + "'  style='width:40px'></td><td>" + vItem[3] + "</td></tr>";
+  total += parseInt(vItem[3]);
   temp += "</table>";
-  toScreen.innerHTML = temp;
 
+  toScreen.innerHTML = temp;
   var gt = document.getElementById("total");
-  temp2 = total;
-  gt.innerHTML = temp2;
+  gt.innerHTML = total;
 
 
 $('#quantityRift').click(function() {

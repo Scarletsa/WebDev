@@ -1,73 +1,30 @@
-
 function display(){
-  var itemString = window.localStorage.getItem("oculusCart");
-  var iList = itemString.split(";")
+  total = 0;
+  var oculusString = window.localStorage.getItem("oculusCart");
+  var oItem = oculusString.split("|");
+  var gearString = window.localStorage.getItem("gearCart");
+  var gItem = gearString.split("|");
+  var viveString = window.localStorage.getItem("viveCart");
+  var vItem = viveString.split("|");
   var toScreen = document.getElementById("cartDisplay");
-  toScreen.innerHTML = iList;
 
   var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
-
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-
-  var itemString = window.localStorage.getItem("gearCart");
-  var iList = itemString.split(";");
-
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-
-  var itemString = window.localStorage.getItem("viveCart");
-  var iList = itemString.split(";");
-
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-
+  temp += "<tr><td>" + oItem[0] + "</td><td>" + oItem[1] + "</td><td><input name='quantityRift' id='quantityRift' type='text' value='" + oItem[2] + "'  style='width:40px'></td><td>" + oItem[3] + "</td></tr>";
+  total += parseInt(oItem[3]);
+  temp += "<tr><td>" + gItem[0] + "</td><td>" + gItem[1] + "</td><td><input name='quantityGear' id='quantityGear' type='text' value='" + gItem[2] + "' style='width:40px'></td><td>" + gItem[3] + "</td></tr>";
+  total += parseInt(gItem[3]);
+  temp += "<tr><td>" + vItem[0] + "</td><td>" + vItem[1] + "</td><td><input name='quantityVive' id='quantityVive' type='text' value='" + vItem[2] + "'  style='width:40px'></td><td>" + vItem[3] + "</td></tr>";
+  total += parseInt(vItem[3]);
   temp += "</table>";
+
   toScreen.innerHTML = temp;
-}
 
-/*function displayGear(){
-  var itemString = window.localStorage.getItem("wishListGear");
-  var iList = itemString.split(";")
-  var toScreen = document.getElementById("wishlistDisplay2");
-  toScreen.innerHTML = iList;
-  var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
+  var gt = document.getElementById("total");
+  gt.innerHTML = total;
 
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp = "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-  temp += "</table>";
-  toScreen.innerHTML = temp;
-}
+  $('clear').click(function (){
 
-function displayVive(){
-  var itemString = window.localStorage.getItem("wishListVive");
-  var iList = itemString.split(";")
-  var toScreen = document.getElementById("wishlistDisplay3");
-  toScreen.innerHTML = iList;
-
-  var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp = "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-  temp += "</table>";
-  toScreen.innerHTML = temp;
-}*/
-
+  })
+};
 
 window.addEventListener("load" ,display , false)
-//window.addEventListener("load" ,displayGear , false)
-//window.addEventListener("load" ,displayVive , false)

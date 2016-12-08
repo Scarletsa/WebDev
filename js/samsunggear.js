@@ -1,6 +1,3 @@
-var wish = [];
-var cart = [];
-
 $(document).ready(function(){
       $("#wishListSamsung").click(function() {
         var price = 99;
@@ -8,8 +5,7 @@ $(document).ready(function(){
         var quantity = parseInt(window.prompt("Please enter a quantity: "));
         var total = (price * quantity);
         var item = (description + "|" + price + "|" + quantity + "|" + total);
-        wish.push(item);
-        window.localStorage.setItem("gearWish", (wish.join(";")));
+        window.localStorage.setItem("gearWish", item);
         alert("Samsung Gear added to wish list");
       })
 
@@ -19,8 +15,7 @@ $(document).ready(function(){
         var quantity = parseInt(window.prompt("Please enter a quantity: "));
         var total = (price * quantity);
         var item = (description + "|" + price + "|" + quantity + "|" + total);
-        cart.push(item);
-        window.localStorage.setItem("gearCart", (cart.join(";")));
+        window.localStorage.setItem("gearCart", item);
         alert("Samsung Gear added to cart");
       });
 });

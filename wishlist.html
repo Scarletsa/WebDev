@@ -4,7 +4,8 @@
   <meta charset = "utf-8"/>
 <title>Sign up</title>
 <link rel ="stylesheet" href ="stylesheets/signup.css"/>
-		<script language = "javascript" type="text/javascript" src = "js/wishlist.js"></script>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script language = "javascript" type="text/javascript" src = "js/wishlist.js"></script>
 </head>
 <body>
   <header>
@@ -29,11 +30,17 @@
 
 <div>
 <div id="main">
-    <p id = "wishlistHead"> Your Wish-List</p>
+    <h3>Wish List</h3>
+    <hr>
   <div id = "wishlistDisplay">
   </div>
-    <p><input type="button" id="signup" value="Sign up!">
-    <input type="button" id="clear" value="Clear"></p>
+  <hr>
+  <div>
+    <span>The total comes to: $</span><span id = 'total'></span>
+    <hr>
+  </div>
+    <p><input type="button" id="cart" value="Replace cart">
+    <input type="button" id="zero" value="Clear"></p>
 </div>
 </div>
 

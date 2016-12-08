@@ -1,72 +1,73 @@
-
-function display(){
-  var itemString = window.localStorage.getItem("oculusWish");
-  var iList = itemString.split(";")
+function display() {
+  total = 0;
+  var oculusString = window.localStorage.getItem("oculusWish");
+  var oItem = oculusString.split("|");
+  var gearString = window.localStorage.getItem("gearWish");
+  var gItem = gearString.split("|");
+  var viveString = window.localStorage.getItem("viveWish");
+  var vItem = viveString.split("|");
   var toScreen = document.getElementById("wishlistDisplay");
-  toScreen.innerHTML = iList;
 
   var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-
-  var itemString = window.localStorage.getItem("gearWish");
-  var iList = itemString.split(";")
-
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-
-  var itemString = window.localStorage.getItem("viveWish");
-  var iList = itemString.split(";")
-
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp += "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-
+  temp += "<tr><td>" + oItem[0] + "</td><td>" + oItem[1] + "</td><td><input name='quantityRift' id='quantityRift' type='text' value='" + oItem[2] + "'  style='width:40px'></td><td>" + oItem[3] + "</td></tr>";
+  total += parseInt(oItem[3]);
+  temp += "<tr><td>" + gItem[0] + "</td><td>" + gItem[1] + "</td><td><input name='quantityGear' id='quantityGear' type='text' value='" + gItem[2] + "' style='width:40px'></td><td>" + gItem[3] + "</td></tr>";
+  total += parseInt(gItem[3]);
+  temp += "<tr><td>" + vItem[0] + "</td><td>" + vItem[1] + "</td><td><input name='quantityVive' id='quantityVive' type='text' value='" + vItem[2] + "'  style='width:40px'></td><td>" + vItem[3] + "</td></tr>";
+  total += parseInt(vItem[3]);
   temp += "</table>";
+
   toScreen.innerHTML = temp;
-}
 
-/*function displayGear(){
-  var itemString = window.localStorage.getItem("wishListGear");
-  var iList = itemString.split(";")
-  var toScreen = document.getElementById("wishlistDisplay2");
-  toScreen.innerHTML = iList;
-  var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
+  var gt = document.getElementById("total");
+  gt.innerHTML = total;
 
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp = "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-  temp += "</table>";
-  toScreen.innerHTML = temp;
-}
+  $('#zero').click(function (){
+    oItem[2] = 0;
+    gItem[2] = 0;
+    vItem[2] = 0;
+    window.localStorage.setItem("oculusWIsh", oItem.join('|'));
+    window.localStorage.setItem("gearWIsh", gItem.join('|'));
+    window.localStorage.setItem("viveWIsh", vItem.join('|'));
+    display();
+  });
 
-function displayVive(){
-  var itemString = window.localStorage.getItem("wishListVive");
-  var iList = itemString.split(";")
-  var toScreen = document.getElementById("wishlistDisplay3");
-  toScreen.innerHTML = iList;
+  $('#cart').click(function () {
+    window.localStorage.setItem("oculusCart", oItem.join('|'));
+    window.localStorage.setItem("gearCart", gItem.join('|'));
+    window.localStorage.setItem("viveCart", vItem.join('|'));
+    display();
+  });
 
-  var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
-  for(var i in iList)
-  {
-    var item = iList[i].split("|");
-    temp = "<tr><td>" + item[0] + "</td><td>" + item[1] + "</td><td>" + item[2] + "</td><td>" + item[3] + "</td></tr>";
-  }
-  temp += "</table>";
-  toScreen.innerHTML = temp;
-}*/
+  $('#quantityRift').click(function() {
+    var price = 799;
+    var description = "Oculus Rift VR";
+    var quantity = parseInt(window.prompt("Please enter a quantity: "));
+    var total = (price * quantity);
+    var item = (description + "|" + price + "|" + quantity + "|" + total);
+    window.localStorage.setItem("oculusWish", (item));
+    display()
+  });
 
+  $('#quantityGear').click(function() {
+    var price = 99;
+    var description = "Samsung Gear VR";
+    var quantity = parseInt(window.prompt("Please enter a quantity: "));
+    var total = (price * quantity);
+    var item = (description + "|" + price + "|" + quantity + "|" + total);
+    window.localStorage.setItem("gearWish", (item));
+    display();
+  });
+
+  $('#quantityVive').click(function() {
+    var price = 799;
+    var description = "HTC Vive VR";
+    var quantity = parseInt(window.prompt("Please enter a quantity: "));
+    var total = (price * quantity);
+    var item = (description + "|" + price + "|" + quantity + "|" + total);
+    window.localStorage.setItem("viveWish", (item));
+    display();
+  });
+};
 
 window.addEventListener("load" ,display , false)
-//window.addEventListener("load" ,displayGear , false)
-//window.addEventListener("load" ,displayVive , false)

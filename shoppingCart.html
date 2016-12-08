@@ -4,6 +4,7 @@
   <meta charset = "utf-8"/>
 <title>Sign up</title>
 <link rel ="stylesheet" href ="stylesheets/signup.css"/>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 <script language = "javascript" type="text/javascript" src = "js/shoppingCart.js"></script>
 </head>
 <body>
@@ -29,10 +30,16 @@
 
 <div>
 <div id="main">
-    <p id = "cartHead"> Your Shopping Cart</p>
+  <h3>Cart</h3>
+  <hr>
   <div id = "cartDisplay">
   </div>
-    <p><input type="button" id="signup" value="Sign up!">
+  <hr>
+  <div>
+    <span>The total comes to: $</span><span id = 'total'></span>
+    <hr>
+  </div>
+    <p><a href='checkout.html'><input type="button" id="signup" value="Proceed to checkout!"></a>
     <input type="button" id="clear" value="Clear"></p>
 </div>
 </div>
