@@ -1,11 +1,43 @@
 function display() {
   total = 0;
+
+  if (window.localStorage.getItem("oculusWish") == null) {
+  var price = 799;
+  var description = "Oculus Rift VR";
+  var quantity = 0;
+  var total = (price * quantity);
+  var item = (description + "|" + price + "|" + quantity + "|" + total);
+  window.localStorage.setItem("oculusWish", (item));
+} else {
   var oculusString = window.localStorage.getItem("oculusWish");
   var oItem = oculusString.split("|");
+}
+
+if (window.localStorage.getItem("gearWish") == null) {
+  var price = 99;
+  var description = "Samsung Gear VR";
+  var quantity = 0;
+  var total = (price * quantity);
+  var item = (description + "|" + price + "|" + quantity + "|" + total);
+  window.localStorage.setItem("gearWish", (item));
+} else {
   var gearString = window.localStorage.getItem("gearWish");
   var gItem = gearString.split("|");
+}
+
+
+if (window.localStorage.getItem("viveWish") == null) {
+  var price = 799;
+  var description = "HTC Vive VR";
+  var quantity = 0;
+  var total = (price * quantity);
+  var item = (description + "|" + price + "|" + quantity + "|" + total);
+  window.localStorage.setItem("viveWish", (item));
+} else {
   var viveString = window.localStorage.getItem("viveWish");
   var vItem = viveString.split("|");
+}
+
   var toScreen = document.getElementById("wishlistDisplay");
 
   var temp = "<table><tr><td>Description</td><td>Price</td><td>Quantity</td><td>Total</td></tr>";
@@ -23,12 +55,24 @@ function display() {
   gt.innerHTML = total;
 
   $('#zero').click(function (){
-    oItem[2] = 0;
-    gItem[2] = 0;
-    vItem[2] = 0;
-    window.localStorage.setItem("oculusWIsh", oItem.join('|'));
-    window.localStorage.setItem("gearWIsh", gItem.join('|'));
-    window.localStorage.setItem("viveWIsh", vItem.join('|'));
+    var price = 799;
+    var description = "Oculus Rift VR";
+    var quantity = 0;
+    var total = (price * quantity);
+    var item = (description + "|" + price + "|" + quantity + "|" + total);
+    window.localStorage.setItem("oculusWish", item);
+    var price = 99;
+    var description = "Samsung Gear VR";
+    var quantity = 0;
+    var total = (price * quantity);
+    var item = (description + "|" + price + "|" + quantity + "|" + total);
+    window.localStorage.setItem("gearWish", item);
+    var price = 799;
+    var description = "HTC Vive VR";
+    var quantity = 0;
+    var total = (price * quantity);
+    var item = (description + "|" + price + "|" + quantity + "|" + total);
+    window.localStorage.setItem("viveWish", item);
     display();
   });
 
