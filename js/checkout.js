@@ -22,7 +22,7 @@ function display(){
   var gt = document.getElementById("total");
   gt.innerHTML = total;
 
-
+//J-Query for Oculus Rift Add to Shopping Cart
 $('#quantityRift').click(function() {
   var price = 799;
   var description = "Oculus Rift VR";
@@ -33,6 +33,7 @@ $('#quantityRift').click(function() {
   display()
 });
 
+//J-Query for Samsung Gear Add to Shopping Cart
 $('#quantityGear').click(function() {
   var price = 99;
   var description = "Samsung Gear VR";
@@ -43,6 +44,7 @@ $('#quantityGear').click(function() {
   display();
 });
 
+//J-Query for HTC Vive Add to Shopping Cart
 $('#quantityVive').click(function() {
   var price = 799;
   var description = "HTC Vive VR";
@@ -53,7 +55,9 @@ $('#quantityVive').click(function() {
   display();
 });
 
+//J-Query for Checkout form submission
 $('#signup').click(function(){
+  var flag = true;
   var user = document.getElementById("user").value;
   var first = document.getElementById("first").value;
   var last = document.getElementById("last").value;
@@ -78,88 +82,90 @@ $('#signup').click(function(){
   var cityTrim = city.trim();
   var emailTrim = email.trim();
   //Lengths for verification
-  var stateLength = state.toString().length;
-  var zipLength = zip.toString().length;
-  var phoneLength = phone.toString().length;
-  var passLength = password.toString().length;
-  var ccNumberLength = creditCardNumber.toString().length;
-  var ccExperiationLength = ccExpiration.toString().length;
-  var ccVVLength = ccVerifyValue.toString().length;
+  var stateLength = state.toString().trim().length;
+  var zipLength = zip.toString().trim().length;
+  var phoneLength = phone.toString().trim().length;
+  var passLength = password.toString().trim().length;
+  var ccNumberLength = creditCardNumber.toString().trim().length;
+  var ccExperiationLength = ccExpiration.toString().trim().length;
+  var ccVVLength = ccVerifyValue.toString().trim().length;
 
   if(userTrim == ""){
-    alert("User must enter atleast a 1 character user-name");
     document.getElementById("user").value = "";
     document.getElementById("user").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(firstTrim == ""){
-    alert("User must enter atleast a 1 character for first name");
+  if(firstTrim == ""){
     document.getElementById("first").value = "";
     document.getElementById("first").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(lastTrim == ""){
-    alert("User must enter atleast a 1 character for last name");
+  if(lastTrim == ""){
     document.getElementById("last").value = "";
     document.getElementById("last").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(addressTrim == ""){
+  if(addressTrim == ""){
     alert("User must enter atleast a 1 character for address");
     document.getElementById("address").value = "";
     document.getElementById("address").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(cityTrim == ""){
-    alert("User must enter atleast a 1 character for city");
+  if(cityTrim == ""){
     document.getElementById("city").value = "";
     document.getElementById("city").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(emailTrim == ""){
-    alert("User must enter atleast a 1 character for email");
+  if(emailTrim == ""){
     document.getElementById("email").value = "";
     document.getElementById("email").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(stateLength < 2){
-    alert("States or State Abbreviation must be atleast 2 characters");
+  if(stateLength < 2){
     document.getElementById("state").value = "";
     document.getElementById("state").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(!(zipLength == 5)){
-    alert("Zip code must be 5 digits.");
+  if(!(zipLength == 5)){
     document.getElementById("zip").value = "";
     document.getElementById("zip").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(!(phoneLength == 10)){
-    alert("Phone number must be 10 digits.");
+  if(!(phoneLength == 10)){
     document.getElementById("phone").value = "";
     document.getElementById("phone").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(passLength < 6)
+  if(passLength < 6)
   {
-    alert("Password needs to be at least six characters.");
     document.getElementById("password").value = "";
     document.getElementById("password").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(password != passv) {
+  if(password != passv) {
     alert("Passwords do not match. Please re enter password");
     document.getElementById("password").value = "";
     document.getElementById("passv").value = "";
     document.getElementById("password").style.backgroundColor = "red";
     document.getElementById("passv").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(!(ccNumberLength == 16)){
-    alert("Credit cards must be 16 digits.");
+  if(!(ccNumberLength == 16)){
     document.getElementById("ccNumber").value = "";
     document.getElementById("ccNumber").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(!(ccExperiationLength == 4)){
-    alert("Credit card expiration dates must be 4 digits (mmyy)");
+  if(!(ccExperiationLength == 4)){
     document.getElementById("ccExp").value = "";
     document.getElementById("ccExp").style.backgroundColor = "red";
+    flag = false;
   }
-  else if(!(ccVVLength== 3)){
-    alert("Credit card verification value must be 3 digits.");
+  if(!(ccVVLength== 3)){
     document.getElementById("cvv").value = "";
     document.getElementById("cvv").style.backgroundColor = "red";
+    flag = false;
   }
-  else {
+  if(flag == true) {
     alert("Success! Purchase made. You will recieve a receipt via email.")
     document.getElementById("user").style.backgroundColor = "green";
     document.getElementById("first").style.backgroundColor = "green";
@@ -181,8 +187,151 @@ $('#signup').click(function(){
 
   $('#clear').click(function() {
     document.getElementById("registration").reset();
+    document.getElementById("user").style.backgroundColor = "white";
+    document.getElementById("first").style.backgroundColor = "white";
+    document.getElementById("last").style.backgroundColor = "white";
+    document.getElementById("address").style.backgroundColor = "white";
+    document.getElementById("city").style.backgroundColor = "white";
+    document.getElementById("state").style.backgroundColor = "white";
+    document.getElementById("zip").style.backgroundColor = "white";
+    document.getElementById("email").style.backgroundColor = "white";
+    document.getElementById("password").style.backgroundColor = "white";
+    document.getElementById("passv").style.backgroundColor = "white";
+    document.getElementById("phone").style.backgroundColor = "white";
+    document.getElementById("ccName").style.backgroundColor = "white";
+    document.getElementById("ccNumber").style.backgroundColor = "white";
+    document.getElementById("ccExp").style.backgroundColor = "white";
+    document.getElementById("cvv").style.backgroundColor = "white";
+
   });
 
+  $('#user').keydown(function(){
+    var user = document.getElementById("user").value;
+    var userLength = user.toString().trim().length;
+
+    if(userLength >= 1)
+    {
+      document.getElementById("user").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#first').keydown(function(){
+    var first = document.getElementById("first").value;
+    var firstLength = first.toString().trim().length;
+
+    if(firstLength >= 1)
+    {
+      document.getElementById("first").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#last').keydown(function(){
+    var last = document.getElementById("last").value;
+    var lastLength = last.toString().trim().length;
+
+    if(lastLength >= 1)
+    {
+      document.getElementById("last").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#address').keydown(function(){
+    var address = document.getElementById("address").value;
+    var addressLength = address.toString().trim().length;
+
+    if(addressLength >= 1)
+    {
+      document.getElementById("address").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#city').keydown(function(){
+    var city = document.getElementById("city").value;
+    var cityLength = city.toString().trim().length;
+
+    if(cityLength >= 1)
+    {
+      document.getElementById("city").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#state').keydown(function(){
+    var state = document.getElementById("state").value;
+    var stateLength = state.toString().trim().length;
+
+    if(stateLength >= 2)
+    {
+      document.getElementById("state").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#zip').keydown(function(){
+    var zip = document.getElementById("zip").value;
+    var zipLength = zip.toString().trim().length;
+
+    if(zipLength == 5)
+    {
+      document.getElementById("zip").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#email').keydown(function(){
+    var email = document.getElementById("email").value;
+    var emailLength = email.toString().trim().length;
+
+    if(emailLength >= 1)
+    {
+      document.getElementById("email").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#password').keydown(function(){
+    var password = document.getElementById("password").value;
+    var passwordLength = password.toString().trim().length;
+
+    if(passwordLength >= 5)
+    {
+      document.getElementById("password").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#passv').keydown(function(){
+    var passv = document.getElementById("passv").value;
+    var passvLength = passv.toString().trim().length;
+    var password = document.getElementById("password").value;
+    if(passvLength >= 5)
+    {
+      document.getElementById("passv").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#phone').keydown(function(){
+    var phone = document.getElementById("phone").value;
+    var phoneLength = phone.toString().trim().length;
+
+    if(phoneLength == 10)
+    {
+      document.getElementById("phone").style.backgroundColor = "lightgreen";
+    }
+  });
+
+  $('#ccNumber').keydown(function(){
+    var ccNumber = document.getElementById("ccNumber").value;
+    var ccNumber = ccNumber.toString().trim().length;
+
+    if(ccNumberLength >= 2)
+    {
+      document.getElementById("ccNumber").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#ccExp').keydown(function(){
+    var ccExp = document.getElementById("ccExp").value;
+    var ccExpLength = ccExp.toString().trim().length;
+
+    if(ccExpLength >= 8)
+    {
+      document.getElementById("ccExp").style.backgroundColor = "lightgreen";
+    }
+  });
+  $('#cvv').keydown(function(){
+    var cvv = document.getElementById("cvv").value;
+    var cvvLength = cvv.toString().trim().length;
+
+    if(cvvLength >= 2)
+    {
+      document.getElementById("cvv").style.backgroundColor = "lightgreen";
+    }
+  });
 }
 
 window.addEventListener("load" ,display , false)
