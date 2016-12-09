@@ -87,6 +87,9 @@ if (window.localStorage.getItem("viveWish") == null) {
     var price = 799;
     var description = "Oculus Rift VR";
     var quantity = parseInt(window.prompt("Please enter a quantity: "));
+    while (isNaN(quantity)) {
+        var quantity = parseInt(window.prompt("Please enter a quantity: "));
+    }
     var total = (price * quantity);
     var item = (description + "|" + price + "|" + quantity + "|" + total);
     window.localStorage.setItem("oculusWish", (item));
@@ -97,6 +100,9 @@ if (window.localStorage.getItem("viveWish") == null) {
     var price = 99;
     var description = "Samsung Gear VR";
     var quantity = parseInt(window.prompt("Please enter a quantity: "));
+    while (isNaN(quantity)) {
+        var quantity = parseInt(window.prompt("Please enter a quantity: "));
+    }
     var total = (price * quantity);
     var item = (description + "|" + price + "|" + quantity + "|" + total);
     window.localStorage.setItem("gearWish", (item));
@@ -107,6 +113,9 @@ if (window.localStorage.getItem("viveWish") == null) {
     var price = 799;
     var description = "HTC Vive VR";
     var quantity = parseInt(window.prompt("Please enter a quantity: "));
+    while (isNaN(quantity)) {
+        var quantity = parseInt(window.prompt("Please enter a quantity: "));
+    }
     var total = (price * quantity);
     var item = (description + "|" + price + "|" + quantity + "|" + total);
     window.localStorage.setItem("viveWish", (item));

@@ -28,6 +28,9 @@ $('#quantityRift').click(function() {
   var price = 799;
   var description = "Oculus Rift VR";
   var quantity = parseInt(window.prompt("Please enter a quantity: "));
+  while (isNaN(quantity)) {
+      var quantity = parseInt(window.prompt("Please enter a quantity: "));
+  }
   var total = (price * quantity);
   var item = (description + "|" + price + "|" + quantity + "|" + total);
   window.localStorage.setItem("oculusCart", (item));
@@ -39,6 +42,9 @@ $('#quantityGear').click(function() {
   var price = 99;
   var description = "Samsung Gear VR";
   var quantity = parseInt(window.prompt("Please enter a quantity: "));
+  while (isNaN(quantity)) {
+      var quantity = parseInt(window.prompt("Please enter a quantity: "));
+  }
   var total = (price * quantity);
   var item = (description + "|" + price + "|" + quantity + "|" + total);
   window.localStorage.setItem("gearCart", (item));
@@ -50,6 +56,9 @@ $('#quantityVive').click(function() {
   var price = 799;
   var description = "HTC Vive VR";
   var quantity = parseInt(window.prompt("Please enter a quantity: "));
+  while (isNaN(quantity)) {
+      var quantity = parseInt(window.prompt("Please enter a quantity: "));
+  }
   var total = (price * quantity);
   var item = (description + "|" + price + "|" + quantity + "|" + total);
   window.localStorage.setItem("viveCart", (item));
@@ -290,7 +299,9 @@ $('#signup').click(function(){
   $('#zip').keydown(function(){
     var zip = document.getElementById("zip").value;
     var zipLength = zip.toString().trim().length;
-
+    if (isNaN(zip)) {
+        document.getElementById("zip").style.backgroundColor = "red";
+    } else {
     if(zipLength == 4)
     {
       document.getElementById("zip").style.backgroundColor = "lightgreen";
@@ -299,6 +310,7 @@ $('#signup').click(function(){
     {
       document.getElementById("zip").style.backgroundColor = "red";
     }
+  }
   });
   $('#email').keydown(function(){
     var email = document.getElementById("email").value;
@@ -330,7 +342,9 @@ $('#signup').click(function(){
   $('#phone').keydown(function(){
     var phone = document.getElementById("phone").value;
     var phoneLength = phone.toString().trim().length;
-
+    if (isNaN(phone)) {
+        document.getElementById("phone").style.backgroundColor = "red";
+    } else {
     if(phoneLength == 9)
     {
       document.getElementById("phone").style.backgroundColor = "lightgreen";
@@ -339,12 +353,16 @@ $('#signup').click(function(){
     {
       document.getElementById("phone").style.backgroundColor = "red";
     }
+  }
   });
 
   $('#ccNumber').keydown(function(){
     var ccNumber = document.getElementById("ccNumber").value;
     var ccNumberLength = ccNumber.toString().trim().length;
 
+    if (isNaN(ccNumber)) {
+        document.getElementById("ccNumber").style.backgroundColor = "red";
+    } else {
     if(ccNumberLength == 15)
     {
       document.getElementById("ccNumber").style.backgroundColor = "lightgreen";
@@ -353,11 +371,15 @@ $('#signup').click(function(){
     {
       document.getElementById("ccNumber").style.backgroundColor = "red";
     }
+  }
   });
   $('#ccExp').keydown(function(){
     var ccExp = document.getElementById("ccExp").value;
     var ccExpLength = ccExp.toString().trim().length;
 
+    if (isNaN(ccExp)) {
+        document.getElementById("ccExp").style.backgroundColor = "red";
+    } else {
     if(ccExpLength == 3)
     {
       document.getElementById("ccExp").style.backgroundColor = "lightgreen";
@@ -366,11 +388,15 @@ $('#signup').click(function(){
     {
       document.getElementById("ccExp").style.backgroundColor = "red";
     }
+  }
   });
   $('#cvv').keydown(function(){
     var cvv = document.getElementById("cvv").value;
     var cvvLength = cvv.toString().trim().length;
 
+    if (isNaN(cvv)) {
+        document.getElementById("cvv").style.backgroundColor = "red";
+    } else {
     if(cvvLength >= 2)
     {
       document.getElementById("cvv").style.backgroundColor = "lightgreen";
@@ -379,6 +405,7 @@ $('#signup').click(function(){
     {
       document.getElementById("cvv").style.backgroundColor = "red";
     }
+  }
   });
 }
 
