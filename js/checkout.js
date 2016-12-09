@@ -295,6 +295,10 @@ $('#signup').click(function(){
     {
       document.getElementById("zip").style.backgroundColor = "lightgreen";
     }
+    if(zipLength > 4)
+    {
+      document.getElementById("zip").style.backgroundColor = "red";
+    }
   });
   $('#email').keydown(function(){
     var email = document.getElementById("email").value;
@@ -331,6 +335,10 @@ $('#signup').click(function(){
     {
       document.getElementById("phone").style.backgroundColor = "lightgreen";
     }
+    if(phoneLength > 9)
+    {
+      document.getElementById("phone").style.backgroundColor = "red";
+    }
   });
 
   $('#ccNumber').keydown(function(){
@@ -341,6 +349,10 @@ $('#signup').click(function(){
     {
       document.getElementById("ccNumber").style.backgroundColor = "lightgreen";
     }
+    if(ccNumberLength > 15)
+    {
+      document.getElementById("ccNumber").style.backgroundColor = "red";
+    }
   });
   $('#ccExp').keydown(function(){
     var ccExp = document.getElementById("ccExp").value;
@@ -350,6 +362,10 @@ $('#signup').click(function(){
     {
       document.getElementById("ccExp").style.backgroundColor = "lightgreen";
     }
+    if(ccExpLength > 3)
+    {
+      document.getElementById("ccExp").style.backgroundColor = "red";
+    }
   });
   $('#cvv').keydown(function(){
     var cvv = document.getElementById("cvv").value;
@@ -358,6 +374,10 @@ $('#signup').click(function(){
     if(cvvLength >= 2)
     {
       document.getElementById("cvv").style.backgroundColor = "lightgreen";
+    }
+    if(cvvLength > 3)
+    {
+      document.getElementById("cvv").style.backgroundColor = "red";
     }
   });
 }
